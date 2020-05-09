@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "declaration": false,
+    "jsx": "react",
+    "jsxFactory": "jsx",
+    "lib": ["dom", "es2017"],
+    "module": "amd",
+    "moduleResolution": "node",
+    "noImplicitAny": true,
+    "noUnusedLocals": true,
+    "preserveWatchOutput": true,
+    "removeComments": false,
+    "sourceMap": true,
+    "target": "ES6"
+  },
+  "files": ["../src/jsx-global.d.ts", "app.tsx"]
+}
