@@ -1,4 +1,4 @@
-import {jsx} from '../src/jsx';
+import {h, Fragment} from '../src/jsx';
 import {init as snabbdomInit} from 'snabbdom/snabbdom';
 import toVNode from 'snabbdom/tovnode';
 import {VNode} from 'snabbdom/vnode';
@@ -47,7 +47,24 @@ const ProgressCircle = ({unit, value, maxValue}: TimeUnitProps) => {
   );
 };
 
-const TimeSpan = ({unit, value}: TimeUnitProps) => <span attrs={{class: unit}}>{String(value).padStart(2, `0`)}</span>;
+const TimeSpans = ({
+  hours,
+  minutes,
+  seconds,
+  ampm,
+}: {
+  hours: number;
+  minutes: number;
+  seconds: number;
+  ampm: string;
+}) => (
+  <Fragment>
+    <span sel=".hours">{String(hours).padStart(2, `0`)}</span>
+    <span sel=".minutes">{String(minutes).padStart(2, `0`)}</span>
+    <span sel=".seconds">{String(seconds).padStart(2, `0`)}</span>
+    <span sel=".am_pm">{ampm}</span>
+  </Fragment>
+);
 
 class ClockApp {
   private props: ClockProps = {};
@@ -69,10 +86,11 @@ class ClockApp {
 
   render() {
     // inspired from https://codepen.io/prathameshkoshti/pen/Rwwaqgv
-    const hours = new Date().getHours() > 12 ? new Date().getHours() - 12 : new Date().getHours();
-    const minutes = new Date().getMinutes();
-    const seconds = new Date().getSeconds();
-    const ampm = new Date().getHours() >= 12 ? `PM` : `AM`;
+    const date = new Date();
+    const hours = date.getHours() > 12 ? date.getHours() - 12 : date.getHours();
+    const minutes = date.getMinutes();
+    const seconds = date.getSeconds();
+    const ampm = date.getHours() >= 12 ? `PM` : `AM`;
 
     return (
       <div sel=".clock">
@@ -84,15 +102,14 @@ class ClockApp {
             viewport: `0 0 400 400`,
           }}
         >
-          <ProgressCircle unit="seconds" value={seconds} maxValue={60} />
-          <ProgressCircle unit="minutes" value={minutes} maxValue={60} />
-          <ProgressCircle unit="hours" value={hours} maxValue={12} />
+          <Fragment>
+            <ProgressCircle unit="seconds" value={seconds} maxValue={60} />
+            <ProgressCircle unit="minutes" value={minutes} maxValue={60} />
+            <ProgressCircle unit="hours" value={hours} maxValue={12} />
+          </Fragment>
         </svg>
         <div sel=".text_grid">
-          <TimeSpan unit="hours" value={hours} />
-          <TimeSpan unit="minutes" value={minutes} />
-          <TimeSpan unit="seconds" value={seconds} />
-          <span sel=".am_pm">{ampm}</span>
+          <TimeSpans {...{hours, minutes, seconds, ampm}} />
         </div>
       </div>
     );

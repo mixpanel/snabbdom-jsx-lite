@@ -2,7 +2,7 @@
   "compilerOptions": {
     "declaration": false,
     "jsx": "react",
-    "jsxFactory": "jsx",
+    "jsxFactory": "h",
     "lib": ["dom", "es2017"],
     "module": "amd",
     "moduleResolution": "node",

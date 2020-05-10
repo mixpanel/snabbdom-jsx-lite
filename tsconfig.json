@@ -5,9 +5,10 @@
     "declaration": true,
     "esModuleInterop": true,
     "jsx": "react",
-    "jsxFactory": "jsx",
+    "jsxFactory": "h",
     "lib": ["esnext", "dom"],
     "moduleResolution": "node",
+    "noEmit": true,
     "noFallthroughCasesInSwitch": true,
     "noImplicitAny": true,
     "noImplicitReturns": true,
@@ -19,5 +20,5 @@
     "strictNullChecks": false,
     "target": "ES6"
   },
-  "include": ["src", "example"]
+  "include": ["src"]
 }
