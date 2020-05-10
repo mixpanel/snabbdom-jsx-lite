@@ -6,7 +6,7 @@
     "dist",
     "src"
   ],
-  "main": "dist/jsx.js",
+  "main": "dist/h.js",
   "scripts": {
     "clean": "rm -rf dist dist_example",
     "build": "npm run build:dist && npm run build:example",
