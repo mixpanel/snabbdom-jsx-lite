@@ -1,4 +1,4 @@
-import {h, Fragment} from '../src/jsx';
+import {h, Frag} from '../src/jsx';
 import {init as snabbdomInit} from 'snabbdom/snabbdom';
 import toVNode from 'snabbdom/tovnode';
 import {VNode} from 'snabbdom/vnode';
@@ -58,12 +58,12 @@ const TimeSpans = ({
   seconds: number;
   ampm: string;
 }) => (
-  <Fragment>
+  <Frag>
     <span sel=".hours">{String(hours).padStart(2, `0`)}</span>
     <span sel=".minutes">{String(minutes).padStart(2, `0`)}</span>
     <span sel=".seconds">{String(seconds).padStart(2, `0`)}</span>
     <span sel=".am_pm">{ampm}</span>
-  </Fragment>
+  </Frag>
 );
 
 class ClockApp {
@@ -102,11 +102,11 @@ class ClockApp {
             viewport: `0 0 400 400`,
           }}
         >
-          <Fragment>
+          <Frag>
             <ProgressCircle unit="seconds" value={seconds} maxValue={60} />
             <ProgressCircle unit="minutes" value={minutes} maxValue={60} />
             <ProgressCircle unit="hours" value={hours} maxValue={12} />
-          </Fragment>
+          </Frag>
         </svg>
         <div sel=".text_grid">
           <TimeSpans {...{hours, minutes, seconds, ampm}} />
