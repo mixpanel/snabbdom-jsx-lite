@@ -23,7 +23,7 @@ tsconfig.json
 {
   "compilerOptions": {
     "jsx": "react",
-    "jsxFactory": "h"
+    "jsxFactory": "jsx"
   }
 }
 ```
@@ -33,7 +33,7 @@ NOTE: `jsxFragmentFactory` compiler option is still being worked on in Typescrip
 profile.tsx
 
 ```tsx
-import {h} from 'snabbdom-jsx-lite';
+import {jsx} from 'snabbdom-jsx-lite';
 
 const profile = (
   <div>
@@ -55,7 +55,7 @@ Install: `yarn add snabbdom-jsx-lite @babel/plugin-transform-react-jsx`
     [
       "@babel/plugin-transform-react-jsx",
       {
-        "pragma": "h",
+        "pragma": "jsx",
         "pragmaFrag": "Frag"
       }
     ]
@@ -66,7 +66,7 @@ Install: `yarn add snabbdom-jsx-lite @babel/plugin-transform-react-jsx`
 profile.jsx
 
 ```jsx
-import {h} from 'snabbdom-jsx-lite';
+import {jsx} from 'snabbdom-jsx-lite';
 
 const profile = (
   <div>
@@ -87,7 +87,7 @@ Demo is available at [nojvek.github.io/snabbdom-jsx-lite](https://nojvek.github.
 
 ### Performance
 
-`snabbdom-jsx-lite`'s `h` is as performant as `snabbdom`'s `h`.
+`snabbdom-jsx-lite`'s `jsx` function is as performant as `snabbdom`'s `h` function.
 It avoids expensive string manipulation like other snabbdom-jsx libraries.
 
 ### JSX examples

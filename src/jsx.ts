@@ -46,7 +46,7 @@ function addSvgNs(sel: string, data: VNodeData | undefined, children: VNode[] | 
  * jsx/tsx + hyperscript compatible vnode factory function
  * see: https://www.typescriptlang.org/docs/handbook/jsx.html#factory-functions
  */
-export function h(
+export function jsx(
   tag: string | FunctionComponent,
   data: JsxVNodeProps | null,
   ...children: JsxVNodeChildren[]

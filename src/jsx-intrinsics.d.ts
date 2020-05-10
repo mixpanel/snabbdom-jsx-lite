@@ -1,6 +1,6 @@
 // ts-eslint has a bug for type imports used in globals
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import {JsxVNode, JsxVNodeProps} from './h';
+import {JsxVNode, JsxVNodeProps} from './jsx';
 
 declare global {
   /**

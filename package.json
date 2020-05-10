@@ -1,15 +1,15 @@
 {
   "name": "snabbdom-jsx-lite",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Write snabbdom templates in .jsx or .tsx (JSX for TypeScript)",
   "files": [
     "dist",
     "src"
   ],
-  "main": "dist/h.js",
+  "main": "dist/jsx.js",
   "scripts": {
     "clean": "rm -rf dist dist_example",
-    "build": "npm run build:dist && npm run build:example",
+    "build": "npm run clean && npm run build:dist && npm run build:example",
     "build:dist": "tsc -p tsconfig.json && cp src/jsx-intrinsics.d.ts dist/",
     "build:example": "NODE_ENV=production webpack --config example/webpack.config.js"
   },
