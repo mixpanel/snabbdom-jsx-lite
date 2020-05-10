@@ -1,4 +1,4 @@
-# snabbdom-tsx
+# snabbdom-jsx-lite
 
 Write snabbdom templates in .tsx with Typescript or via Babel in .jsx files.
 
@@ -8,14 +8,14 @@ Write snabbdom templates in .tsx with Typescript or via Babel in .jsx files.
 and compiling JSX directly to JavaScript.
 
 Instead of using snabbdom's `h` (hyperscript function `h(tag, data, children)`) to define the virtual tree,
-with `snabbdom-tsx`, you get an similar `h` function that is JSX compatible with Babel and Typescript.
+with `snabbdom-jsx-lite`, you get an similar `h` function that is JSX compatible with Babel and Typescript.
 
 Top level props can be any of the the [initialized snabbdom modules](https://github.com/snabbdom/snabbdom#modules-documentation)
 such as `class`, `attrs`, `props`, `on`, `style`, `hooks` e.t.c.
 
 ### JSX with Typescript
 
-Install: `yarn add snabbdom-tsx`
+Install: `yarn add snabbdom-jsx-lite`
 
 tsconfig.json
 
@@ -33,7 +33,7 @@ NOTE: `jsxFragmentFactory` compiler option is still being worked on in Typescrip
 profile.tsx
 
 ```tsx
-import {h} from 'snabbdom-tsx';
+import {h} from 'snabbdom-jsx-lite';
 
 const profile = (
   <div>
@@ -45,7 +45,7 @@ const profile = (
 
 ### JSX with Babel
 
-Install: `yarn add snabbdom-tsx @babel/plugin-transform-react-jsx`
+Install: `yarn add snabbdom-jsx-lite @babel/plugin-transform-react-jsx`
 
 .babelrc
 
@@ -66,7 +66,7 @@ Install: `yarn add snabbdom-tsx @babel/plugin-transform-react-jsx`
 profile.jsx
 
 ```jsx
-import {h} from 'snabbdom-tsx';
+import {h} from 'snabbdom-jsx-lite';
 
 const profile = (
   <div>
@@ -81,13 +81,13 @@ const profile = (
 A Clock App example is in provided in the repo that uses Functional Components and Fragments.
 See [example/app.tsx](example/app.tsx)
 
-Demo is available at [nojvek.github.io/snabbdom-tsx](https://nojvek.github.io/snabbdom-tsx/)
+Demo is available at [nojvek.github.io/snabbdom-jsx-lite](https://nojvek.github.io/snabbdom-jsx-lite/)
 
-![snabbdom-tsx demo](https://user-images.githubusercontent.com/1018196/81493451-4ecaa400-9255-11ea-9c57-1dcefff519ea.png)
+![snabbdom-jsx-lite demo](https://user-images.githubusercontent.com/1018196/81493451-4ecaa400-9255-11ea-9c57-1dcefff519ea.png)
 
 ### Performance
 
-`snabbdom-tsx`'s `h` is as performant as `snabbdom`'s `h`.
+`snabbdom-jsx-lite`'s `h` is as performant as `snabbdom`'s `h`.
 It avoids expensive string manipulation like other snabbdom-jsx libraries.
 
 ### JSX examples
