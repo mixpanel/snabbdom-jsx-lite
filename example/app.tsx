@@ -1,4 +1,4 @@
-import {h, Frag} from '../src/jsx';
+import {h, Frag} from '../src/h';
 import {init as snabbdomInit} from 'snabbdom/snabbdom';
 import toVNode from 'snabbdom/tovnode';
 import {VNode} from 'snabbdom/vnode';

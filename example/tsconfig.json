@@ -13,5 +13,5 @@
     "sourceMap": true,
     "target": "ES6"
   },
-  "files": ["../src/jsx-global.d.ts", "app.tsx"]
+  "files": ["../src/jsx-intrinsics.d.ts", "app.tsx"]
 }

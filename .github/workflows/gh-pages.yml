@@ -13,7 +13,7 @@ jobs:
       - name: Build
         run: |
           npm ci
-          npm run build-example
+          npm run build:example
 
       - name: Deploy
         if: success()

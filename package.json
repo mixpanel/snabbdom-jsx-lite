@@ -3,11 +3,15 @@
   "version": "1.0.0",
   "description": "Write snabbdom templates in TSX (JSX for TypeScript)",
   "files": [
-    "dist"
+    "dist",
+    "src"
   ],
-  "main": "dist/index.js",
+  "main": "dist/jsx.js",
   "scripts": {
-    "build-example": "NODE_ENV=production webpack --config example/webpack.config.js "
+    "clean": "rm -rf dist dist_example",
+    "build": "npm run build:dist && npm run build:example",
+    "build:dist": "tsc -p tsconfig.json && cp src/jsx-intrinsics.d.ts dist/",
+    "build:example": "NODE_ENV=production webpack --config example/webpack.config.js"
   },
   "repository": {
     "type": "git",
