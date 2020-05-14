@@ -65,15 +65,16 @@ export function jsx(
       addSvgNs(tag, data, flattenedChildren);
     }
 
-    // append sel css selector to tag to support equivalent of h('span.foo.bar')
+    // append sel css selector to tag to support equivalent of h('div.foo.bar')
     if (data && data.sel) {
       tag += data.sel;
       data.sel = undefined;
     }
 
-    // NOTE: we don't hook into snabbdom's h, but directly create vnodes.
-    // h is just a similar wrapper for creating vnodes. This lets us be performant
-    if (flattenedChildren.length === 1 && flattenedChildren[0].sel === undefined && flattenedChildren[0].text) {
+    const numFlattenedChildren = flattenedChildren.length;
+    if (numFlattenedChildren === 0) {
+      return vnode(tag, data, undefined, undefined, undefined);
+    } else if (numFlattenedChildren === 1 && flattenedChildren[0].sel === undefined && flattenedChildren[0].text) {
       // only child is a simple text node, return as simple text node
       return vnode(tag, data, undefined, flattenedChildren[0].text, undefined);
     } else {

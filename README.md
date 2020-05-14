@@ -37,6 +37,7 @@ import {jsx} from 'snabbdom-jsx-lite';
 
 const profile = (
   <div>
+    {/* `sel` is css selector shorthand, <img sel=".profile" /> is same as <img class={profile: true} /> */}
     <img sel=".profile" attrs={{src: 'avatar.png'}} />
     <h3>{[user.firstName, user.lastName].join(' ')}</h3>
   </div>

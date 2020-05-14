@@ -36,7 +36,7 @@
     "eslint": "6.8.0",
     "eslint-config-prettier": "6.11.0",
     "eslint-plugin-react": "7.18.3",
-    "lint-config-nojvek": "1.0.2",
+    "lint-config-nojvek": "1.0.3",
     "prettier": "2.0.5",
     "prettier-eslint": "9.0.1",
     "snabbdom": "0.7.4",
@@ -46,5 +46,8 @@
     "webpack-bundle-analyzer": "3.6.0",
     "webpack-cli": "3.3.10"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "peerDependencies": {
+    "snabbdom": ">=0.6.1"
+  }
 }
