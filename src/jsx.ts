@@ -4,7 +4,10 @@ import {vnode, VNode, VNodeData} from 'snabbdom/vnode';
 export type JsxVNode = VNode;
 export type JsxVNodeChild = VNode | string | number | boolean | undefined | null;
 export type JsxVNodeChildren = JsxVNodeChild | JsxVNodeChild[];
-export type JsxVNodeProps = VNodeData & {sel?: string};
+export interface JsxVNodeProps extends VNodeData {
+  /** css selector shorthand e.g <div sel="#id.class1.class1" /> */
+  sel?: string;
+}
 
 export type FunctionComponent = (props: {[prop: string]: any} | null, children?: VNode[]) => VNode;
 
