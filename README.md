@@ -91,10 +91,11 @@ Demo is available at [nojvek.github.io/snabbdom-jsx-lite](https://nojvek.github.
 
 ### Performance
 
-`snabbdom-jsx-lite`'s `jsx` function is as performant as `snabbdom`'s `h` function.
+`snabbdom-jsx-lite`'s `jsx` function is insanely fast.
 It avoids expensive string manipulation like other snabbdom-jsx libraries.
+We test that a million vnodes can be created within 150ms.
 
-See [perf.spec.tsx](tests/perf.spec.tsx)
+See [perf.spec.tsx](tests/perf.spec.tsx).
 
 ### JSX examples
 
