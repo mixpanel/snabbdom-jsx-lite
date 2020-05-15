@@ -54,7 +54,8 @@ export function jsx(
   data: JsxVNodeProps | null,
   ...children: JsxVNodeChildren[]
 ): JsxVNode {
-  const flattenedChildren = flattenAndFilterFalsey(children, []);
+  // don't call flattenAndFilterFalsey if no children
+  const flattenedChildren = children.length ? flattenAndFilterFalsey(children, []) : (children as []);
 
   if (typeof tag === `function`) {
     // tag is a function component
