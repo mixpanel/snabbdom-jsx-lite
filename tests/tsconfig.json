@@ -1,0 +1,5 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {},
+  "include": [".", "../src/jsx-intrinsics.d.ts"]
+}

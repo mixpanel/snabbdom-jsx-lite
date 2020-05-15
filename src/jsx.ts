@@ -12,7 +12,7 @@ export interface JsxVNodeProps extends VNodeData {
 export type FunctionComponent = (props: {[prop: string]: any} | null, children?: VNode[]) => VNode;
 
 /** Equivalent of <> (React.Fragment) that that wraps children without a containing dom element */
-export function Frag(_props: {}, children?: Array<string | VNode>): VNode {
+export function Fragment(_props: {}, children?: Array<string | VNode>): VNode {
   return vnode(undefined, undefined, children, undefined, undefined);
 }
 
