@@ -60,16 +60,14 @@ export function jsx(
     // tag is a function component
     return tag(data, flattenedChildren);
   } else {
-    // vnode wants undefined, not null
-    data = data !== null ? data : undefined;
-
     // svg elements need recursive namespace
     if (tag === `svg`) {
       addSvgNs(tag, data, flattenedChildren);
     }
 
     // append sel css selector to tag to support equivalent of h('div.foo.bar')
-    if (data && data.sel) {
+    data = data ?? {};
+    if (data.sel) {
       tag += data.sel;
       data.sel = undefined;
     }
