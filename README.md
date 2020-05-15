@@ -11,7 +11,7 @@ Write snabbdom templates in .tsx with Typescript or via Babel in .jsx files.
 and compiling JSX directly to JavaScript.
 
 Instead of using snabbdom's `h` (hyperscript function `h(tag, data, children)`) to define the virtual tree,
-with `snabbdom-jsx-lite`, you get an similar `h` function that is JSX compatible with Babel and Typescript.
+with `snabbdom-jsx-lite`, you get an similar `jsx` function that is JSX compatible with Babel and Typescript.
 
 Top level props can be any of the the [initialized snabbdom modules](https://github.com/snabbdom/snabbdom#modules-documentation)
 such as `class`, `attrs`, `props`, `on`, `style`, `hooks` e.t.c.
@@ -94,10 +94,12 @@ Demo is available at [nojvek.github.io/snabbdom-jsx-lite](https://nojvek.github.
 `snabbdom-jsx-lite`'s `jsx` function is as performant as `snabbdom`'s `h` function.
 It avoids expensive string manipulation like other snabbdom-jsx libraries.
 
+See [perf.spec.tsx](tests/perf.spec.tsx)
+
 ### JSX examples
 
-- [TSX Clock](http://snabbdom.github.io/snabbdom/examples/tsx-clock/)
-- [TSX Clock source](examples/tsx-clock/)
+- [TSX Clock](http://nojvek.github.io/snabbdom-jsx-lite/)
+- [TSX Clock source](example/)
 
 ### Third party JSX modules
 
