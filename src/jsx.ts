@@ -24,8 +24,11 @@ function flattenAndFilterFalsey(children: JsxVNodeChildren[], flattened: VNode[]
         flattenAndFilterFalsey(child, flattened);
       } else if (typeof child === `string` || typeof child === `number` || typeof child === `boolean`) {
         flattened.push(vnode(undefined, undefined, undefined, String(child), undefined));
-      } else if (child.sel === undefined && Array.isArray(child.children)) {
-        flattenAndFilterFalsey(child.children, flattened); // vnode from Fragment
+      } else if (child.sel === undefined || child.sel === null) {
+        // vnode from Fragment or via `jsxFragmentFactory: "null"` compiler option
+        if (Array.isArray(child.children)) {
+          flattenAndFilterFalsey(child.children, flattened);
+        }
       } else {
         flattened.push(child);
       }
@@ -50,7 +53,7 @@ function addSvgNs(sel: string, data: VNodeData | undefined, children: VNode[] | 
  * see: https://www.typescriptlang.org/docs/handbook/jsx.html#factory-functions
  */
 export function jsx(
-  tag: string | FunctionComponent,
+  tag: string | FunctionComponent | null,
   data: JsxVNodeProps | null,
   ...children: JsxVNodeChildren[]
 ): JsxVNode {

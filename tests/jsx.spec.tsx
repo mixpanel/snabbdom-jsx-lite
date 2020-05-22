@@ -143,6 +143,10 @@ describe(`jsx`, function () {
             </Fragment>
           </Fragment>
           <span>part2</span>
+          <Fragment>
+            <Fragment />
+            <Fragment />
+          </Fragment>
         </Fragment>
       </section>
     );

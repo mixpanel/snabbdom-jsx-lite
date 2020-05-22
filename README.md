@@ -83,7 +83,7 @@ const profile = (
 [Fragments](https://reactjs.org/docs/fragments.html) let you group a list of children without adding extra nodes to the DOM.
 
 NOTE: `jsxFragmentFactory` compiler option is still being worked on in Typescript which would allow using `<>` syntax.
-See [Typescript PR #35392](https://github.com/microsoft/TypeScript/pull/35392).
+See [Typescript PR #38720](https://github.com/microsoft/TypeScript/pull/38720).
 
 For the time being use `<Fragment>` instead.
 
