@@ -5,6 +5,7 @@
     "esModuleInterop": true,
     "jsx": "react",
     "jsxFactory": "jsx",
+    "jsxFragmentFactory": "null",
     "lib": ["es2018", "dom"],
     "moduleResolution": "node",
     "noFallthroughCasesInSwitch": true,
