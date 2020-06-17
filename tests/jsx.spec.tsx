@@ -142,10 +142,12 @@ describe(`jsx`, function () {
               <span>part1</span>
             </>
           </Fragment>
-          <span>part2</span>
+          <div>
+            <span>part2</span>
+          </div>
           <Fragment>
             <></>
-            <></>
+            <>Hello World</>
           </Fragment>
         </Fragment>
       </section>
@@ -180,11 +182,29 @@ describe(`jsx`, function () {
           key: undefined,
         },
         {
-          sel: `span`,
+          sel: `div`,
+          data: {},
+          children: [
+            {
+              sel: `span`,
+              data: {},
+              children: undefined,
+              elm: undefined,
+              text: `part2`,
+              key: undefined,
+            },
+          ],
+          elm: undefined,
+          text: undefined,
+          key: undefined,
+        },
+
+        {
+          sel: undefined,
           data: {},
           children: undefined,
           elm: undefined,
-          text: `part2`,
+          text: `Hello World`,
           key: undefined,
         },
       ],
