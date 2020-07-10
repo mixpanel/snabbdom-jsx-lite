@@ -24,8 +24,8 @@ function flattenAndFilterFalsey(children: JsxVNodeChildren[], flattened: VNode[]
         flattenAndFilterFalsey(child, flattened);
       } else if (typeof child === `string` || typeof child === `number` || typeof child === `boolean`) {
         flattened.push(vnode(undefined, undefined, undefined, String(child), undefined));
-      } else if (child.sel === undefined || child.sel === null) {
-        // vnode from Fragment or via `jsxFragmentFactory: "null"` compiler option
+      } else if (child.sel === undefined && child.text === undefined) {
+        // vnode from Fragment
         if (Array.isArray(child.children)) {
           flattenAndFilterFalsey(child.children, flattened);
         }
@@ -64,8 +64,12 @@ export function jsx(
     // tag is a function component
     return tag(data, flattenedChildren);
   } else {
-    // svg elements need recursive namespace
-    if (tag === `svg`) {
+    if (tag === null) {
+      // Fragment via jsxFragmentFactory: 'null' compiler option
+      // change to undefined since snabbdom expects `tag: string | undefined`
+      tag = undefined as string; // `as string` so we don't get TS typeguard error
+    } else if (tag === `svg`) {
+      // svg elements need recursive namespace
       addSvgNs(tag, data, flattenedChildren);
     }
 
