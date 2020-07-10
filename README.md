@@ -82,19 +82,26 @@ const profile = (
 
 [Fragments](https://reactjs.org/docs/fragments.html) let you group a list of children without adding extra nodes to the DOM.
 
-NOTE: `jsxFragmentFactory` compiler option is still being worked on in Typescript which would allow using `<>` syntax.
-See [Typescript PR #38720](https://github.com/microsoft/TypeScript/pull/38720).
+Use `jsxFragmentFactory` compiler option with Typescript available after version 4.0.0.
 
-For the time being use `<Fragment>` instead.
+```json
+{
+  "compilerOptions": {
+    "jsx": "react",
+    "jsxFactory": "jsx",
+    "jsxFragmentFactory": "null"
+  }
+}
+```
 
 ```jsx
-import {jsx, Fragment} from 'snabbdom-jsx-lite';
+import {jsx} from 'snabbdom-jsx-lite';
 
 const render = () => (
-  <Fragment>
+  <>
     <img sel=".profile" attrs={{src: 'avatar.png'}} />
     <h3>{[user.firstName, user.lastName].join(' ')}</h3>
-  </Fragment>
+  </>
 );
 ```
 
