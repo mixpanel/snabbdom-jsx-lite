@@ -48,7 +48,7 @@
     "snabbdom": "0.7.4",
     "ts-loader": "7.0.3",
     "ts-node": "8.10.1",
-    "typescript": "https://typescript.visualstudio.com/cf7ac146-d525-443c-b23c-0d58337efebc/_apis/build/builds/74777/artifacts?artifactName=tgz&fileId=4E617F10A295CC8B5DD8371C8F44C745356B0A4C8893BB6AD7964773498EA80F02&fileName=/typescript-4.0.0-insiders.20200523.tgz",
+    "typescript": "4.0.0-beta",
     "webpack": "4.41.5",
     "webpack-bundle-analyzer": "3.6.0",
     "webpack-cli": "3.3.10"
