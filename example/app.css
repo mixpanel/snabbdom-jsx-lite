@@ -9,6 +9,7 @@ body {
   display: flex;
   height: 100vh;
   justify-content: center;
+  transform: scale(2);
 }
 
 .clock > svg {
