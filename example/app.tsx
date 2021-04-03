@@ -1,23 +1,7 @@
 import {jsx} from '../src/jsx';
-import {init as snabbdomInit} from 'snabbdom/snabbdom';
-import toVNode from 'snabbdom/tovnode';
-import {VNode} from 'snabbdom/vnode';
-import attrsModule from 'snabbdom/modules/attributes';
-import classModule from 'snabbdom/modules/class';
-import styleModule from 'snabbdom/modules/style';
-import propsModule from 'snabbdom/modules/props';
-import onModule from 'snabbdom/modules/eventlisteners';
+import {render, Component} from './snabb-component';
 
-// initialize snabbdom
-const patch = snabbdomInit([attrsModule, classModule, styleModule, onModule, propsModule]);
-
-interface ClockState {
-  date?: Date;
-}
-
-interface ClockProps {
-  renderCallback?: (vnode: VNode) => void;
-}
+import './app.css';
 
 interface TimeUnitProps {
   unit: 'hours' | 'minutes' | 'seconds';
@@ -66,27 +50,22 @@ const TimeSpans = ({
   </>
 );
 
-class ClockApp {
-  private props: ClockProps = {};
-  private state: ClockState = {};
+interface ClockAppState {
+  date?: Date;
+}
 
-  constructor(props: ClockProps) {
-    this.props = props;
+class ClockApp extends Component<ClockAppState> {
+  constructor() {
+    super();
+
     this.update({date: new Date()});
-
     // update date every second
     setInterval(() => this.update({date: new Date()}), 1000);
   }
 
-  update(stateUpdate: any) {
-    // simple update -> render -> callback loop
-    this.state = Object.assign(this.state, stateUpdate);
-    this.props.renderCallback(this.render());
-  }
-
   render() {
     // inspired from https://codepen.io/prathameshkoshti/pen/Rwwaqgv
-    const date = new Date();
+    const {date} = this.state;
     const hours = date.getHours() > 12 ? date.getHours() - 12 : date.getHours();
     const minutes = date.getMinutes();
     const seconds = date.getSeconds();
@@ -114,18 +93,4 @@ class ClockApp {
   }
 }
 
-function bindRender(el: HTMLElement) {
-  // append empty vnode
-  let vnode = toVNode(document.createComment(``));
-  el.appendChild(vnode.elm);
-
-  function renderCallback(newVNode: VNode) {
-    vnode = patch(vnode, newVNode);
-  }
-
-  return renderCallback;
-}
-
-new ClockApp({
-  renderCallback: bindRender(document.body),
-});
+render(ClockApp, document.body);
