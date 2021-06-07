@@ -1,4 +1,4 @@
-import {vnode, VNode, VNodeData} from 'snabbdom/vnode';
+import {vnode, VNode, VNodeData} from 'snabbdom';
 
 // for conditional rendering we support boolean child element e.g cond && <tag />
 export type JsxVNode = VNode;

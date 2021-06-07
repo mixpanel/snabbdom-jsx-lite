@@ -1,13 +1,15 @@
-import {init as snabbdomInit} from 'snabbdom/snabbdom';
-import toVNode from 'snabbdom/tovnode';
-import {VNode} from 'snabbdom/vnode';
-import attrsModule from 'snabbdom/modules/attributes';
-import classModule from 'snabbdom/modules/class';
-import styleModule from 'snabbdom/modules/style';
-import propsModule from 'snabbdom/modules/props';
-import onModule from 'snabbdom/modules/eventlisteners';
+import {
+  init as snabbdomInit,
+  toVNode,
+  VNode,
+  attributesModule,
+  classModule,
+  styleModule,
+  propsModule,
+  eventListenersModule,
+} from 'snabbdom';
 
-const snabbPatch = snabbdomInit([attrsModule, classModule, styleModule, onModule, propsModule]);
+const snabbPatch = snabbdomInit([attributesModule, classModule, styleModule, eventListenersModule, propsModule]);
 
 export type RenderCallBack = (vnode: VNode) => void;
 
