@@ -1,0 +1,57 @@
+/* example/app.css */
+body {
+  background: #000;
+  margin: 0;
+  font-size: 16px;
+}
+.clock {
+  align-items: center;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  transform: scale(2);
+}
+.clock > svg {
+  transform: rotate(-90deg);
+}
+.clock > .progress > circle {
+  stroke-linecap: butt;
+  stroke-width: 30px;
+  transition: stroke-dashoffset 1s ease-in-out;
+}
+.clock > .progress > .hours {
+  stroke: cyan;
+}
+.clock > .progress > .minutes {
+  stroke: yellow;
+}
+.clock > .progress > .seconds {
+  stroke: magenta;
+}
+.clock > .text_grid {
+  align-items: center;
+  color: #fff;
+  display: grid;
+  font-family: "Monoton", sans-serif;
+  font-size: 2.5em;
+  grid-gap: 5px;
+  grid-template-columns: 70px 70px;
+  grid-template-rows: 70px 70px;
+  justify-items: center;
+  position: absolute;
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+.clock > .text_grid > .hours {
+  color: cyan;
+}
+.clock > .text_grid > .minutes {
+  color: yellow;
+}
+.clock > .text_grid > .seconds {
+  color: magenta;
+}
+.clock > .text_grid > .am_pm {
+  color: #ccc;
+  font-size: 2rem;
+  margin-top: -0.5rem;
+}
