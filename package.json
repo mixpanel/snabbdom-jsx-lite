@@ -12,7 +12,7 @@
     "build": "npm run clean && npm run build:dist && npm run build:example",
     "build:dist": "(cd src; tsc -p tsconfig.json) && cp src/jsx-intrinsics.d.ts dist/",
     "build:example": "esbuild example/app.tsx --bundle --outdir=dist_example/ --sourcemap && cp example/index.html dist_example/",
-    "test": "mocha -r ts-node/register/transpile-only tests/*",
+    "test": "mocha -r ts-node/register/transpile-only tests/*.tsx",
     "prepublishOnly": "npm run build"
   },
   "repository": {
