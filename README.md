@@ -1,6 +1,6 @@
 # snabbdom-jsx-lite
 
-[![Build](https://github.com/nojvek/snabbdom-jsx-lite/workflows/build/badge.svg?branch=master)](https://github.com/nojvek/snabbdom-jsx-lite/actions?query=workflow%3Abuild)
+[![Build](https://github.com/mixpanel/snabbdom-jsx-lite/workflows/build/badge.svg?branch=master)](https://github.com/mixpanel/snabbdom-jsx-lite/actions?query=workflow%3Abuild)
 [![NPM version](https://img.shields.io/npm/v/snabbdom-jsx-lite.svg)](https://www.npmjs.com/package/snabbdom-jsx-lite)
 
 Write snabbdom templates in .tsx with Typescript or via Babel in .jsx files.

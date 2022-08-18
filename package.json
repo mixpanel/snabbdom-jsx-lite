@@ -17,7 +17,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nojvek/snabbdom-jsx-lite.git"
+    "url": "git+https://github.com/mixpanel/snabbdom-jsx-lite.git"
   },
   "keywords": [
     "snabbdom",
@@ -28,9 +28,9 @@
   "author": "nojvek",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/nojvek/snabbdom-jsx-lite/issues"
+    "url": "https://github.com/mixpanel/snabbdom-jsx-lite/issues"
   },
-  "homepage": "https://github.com/nojvek/snabbdom-jsx-lite#readme",
+  "homepage": "https://github.com/mixpanel/snabbdom-jsx-lite#readme",
   "devDependencies": {
     "@types/chai": "4.2.11",
     "@types/mocha": "9.0.0",
