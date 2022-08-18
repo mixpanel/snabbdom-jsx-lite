@@ -1,6 +1,6 @@
 {
   "name": "snabbdom-jsx-lite",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Write snabbdom templates in .jsx or .tsx (JSX for TypeScript)",
   "files": [
     "dist",
